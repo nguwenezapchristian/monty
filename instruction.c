@@ -55,6 +55,29 @@ void push(stack_t **stack, unsigned int line_number, char **tokens)
 	*stack = nnode;
 }
 /**
+ * pop - removes the top element of the stack
+ * @stack: double pointer to the stack
+ * @line_number: current line number in the file
+ */
+
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL)
+	{
+		printf("L%d: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(temp);
+}
+
+/**
  * pall - print all data in stack
  * @stack: pointer to the stack
  * @line_number: current line number in the file

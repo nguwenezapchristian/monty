@@ -45,10 +45,16 @@ int main(int argc, char **argv)
 
 		if (i > 0 && tokens[0][0] != '#')
 		{
-			if (strcmp(tokens[0], "push") == 0)
+			if (_strcmp(tokens[0], "push") == 0)
 				push(&stack, line_number, tokens);
-			else if (strcmp(tokens[0], "pall") == 0)
+			else if (_strcmp(tokens[0], "pall") == 0)
 				pall(&stack, line_number);
+			else if (_strcmp(tokens[0], "pop") == 0)
+				pop(&stack, line_number);
+			else if (_strcmp(tokens[0], "pint") == 0)
+				pint(&stack, line_number);
+			else if (_strcmp(tokens[0], "swap") == 0)
+				swap(&stack, line_number);
 			else
 			{
 				printf("L%d: unknown instruction %s\n", line_number, tokens[0]);
