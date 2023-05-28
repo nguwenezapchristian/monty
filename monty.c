@@ -55,6 +55,8 @@ int main(int argc, char **argv)
 				pint(&stack, line_number);
 			else if (_strcmp(tokens[0], "swap") == 0)
 				swap(&stack, line_number);
+			else if (_strcmp(tokens[0], "nop") == 0)
+				exit(0);
 			else
 			{
 				printf("L%d: unknown instruction %s\n", line_number, tokens[0]);

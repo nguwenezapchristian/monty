@@ -36,6 +36,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void *_realloc(void *ptr, ssize_t size);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 int is_integer(const char *str);
 int _strcmp(char *s1, char *s2);
